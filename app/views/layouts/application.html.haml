@@ -1,18 +1,18 @@
 !!! 5
 %html
 %head
-  %title Pin Board
+  %title League of Legends
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
   %nav.navbar.navbar-default
     .container
-      .navbar-brand= link_to "Pin Boad", root_path
+      .navbar-brand= link_to "League of Legends", root_path
 
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
-          %li= link_to "New Pin", new_pin_path
+          %li= link_to "New Character", new_pin_path
           %li= link_to "Account", edit_user_registration_path
           %li= link_to "Sign Out", destroy_user_session_path, method: :delete
       - else

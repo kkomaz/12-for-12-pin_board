@@ -1,0 +1,14 @@
+.row
+  .col-md-12
+    - @pin.comments.each do |comment|
+      %p
+      Submitted by
+      = @pin.user.email
+      %p= comment.content
+      %br/
+    -if user_signed_in?
+      = simple_form_for [@pin, Comment.new] do |f|
+        = f.input :content, label: 'Comments', :input_html => {class: 'form-control'}
+        = f.button :submit, class:"btn btn-primary"
+    -else
+      %strong Please Sign up/in to Comment!
