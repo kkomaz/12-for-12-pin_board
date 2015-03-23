@@ -1,0 +1,7 @@
+-if user_signed_in?
+  = simple_form_for [@pin, Comment.new] do |f|
+    = f.input :content, label: 'Comments', :input_html => {class: 'form-control'}
+    = f.button :submit, class:"btn btn-primary"
+    = f.hidden_field :user_id, value: current_user.id
+-else
+  %strong Please Sign up/in to Comment!

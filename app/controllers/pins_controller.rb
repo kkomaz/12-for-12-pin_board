@@ -15,6 +15,7 @@ class PinsController < ApplicationController
 
   def create
     @pin = current_user.pins.build(pin_params)
+    @pin.character = Character.find(params[:pin][:character])
     if @pin.save
       redirect_to @pin, notice: "Sucessfully created new Pin"
     else
@@ -23,6 +24,7 @@ class PinsController < ApplicationController
   end
 
   def update
+    @pin.character = Character.find(params[:pin][:character])
     if @pin.update(pin_params)
       redirect_to @pin, notice: "Pin was sucessfully updated!"
     else

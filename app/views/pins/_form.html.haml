@@ -8,6 +8,8 @@
         - @pin.errors.full_messages.each do |msg|
           %li = msg
 
+  .form-group
+    = f.input :character, collection: Character.all, label_method: :name, :selected => :character_id, input_html: {class: 'form-control'} 
 
   .form-group
     = f.input :image, input_html: {class: 'form-control'}
