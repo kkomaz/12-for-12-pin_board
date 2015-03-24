@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   def create
-    # binding.pry
     @comment = Comment.new(comment_params)
     @comment.pin_id = params[:pin_id]
     @comment.save
