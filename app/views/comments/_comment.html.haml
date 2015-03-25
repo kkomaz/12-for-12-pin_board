@@ -1,5 +1,8 @@
-%p
-Submitted by
-= comment.user.email
-%p= comment.content 
-%br/
+.comment{:id => "comment-#{comment.id}"}
+  %p
+  Submitted by
+  = comment.user.email
+  %p= comment.content 
+  .col-md-12
+    .btn-group.pull-right
+      = link_to 'Delete', [@pin, comment], method: :delete, :class => "btn btn-danger"

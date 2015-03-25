@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :characters, :only => :create
   devise_for :users
   resources :pins do
-    resources :comments, :only => :create
+    resources :comments
     member do
       put "like", to: "pins#upvote"
     end
