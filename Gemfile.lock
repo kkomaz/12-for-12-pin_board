@@ -194,7 +194,6 @@ DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   bootstrap-sass (~> 3.3.3)
   byebug
-  coffee-rails (~> 4.1.0)
   devise (~> 3.4.1)
   haml (~> 4.0.6)
   jbuilder (~> 2.0)

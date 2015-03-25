@@ -7,19 +7,22 @@ class CommentsController < ApplicationController
     @comment.save
 
     respond_to do |format|
-      format.js { }
+      format.js {}
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
-    @pin = Pin.find(params[:pin_id])
+    @pin = @comment.pin
     @comment.destroy
     redirect_to @pin
+    
     # respond_to do |format|
-    #   format.js { }
+    #   format.html do 
+        # 
+      # end
+      # format.js {render :template => 'destroy.js.erb', :layout => false}
     # end
-
     # render :nothing =>true, :status => 204  
   end
 
