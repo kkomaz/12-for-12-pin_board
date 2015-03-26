@@ -1,0 +1,4 @@
+$('.vpos').on('ajax:success', function() {
+ $('#upvote').html('<%= j @pin.get_upvotes.size.to_s %>');
+ $('#downvote').html('<%= j @pin.get_downvotes.size.to_s %>');
+});
