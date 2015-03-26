@@ -1,5 +1,5 @@
 class PinsController < ApplicationController
-  before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote]
+  before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, except: [:index, :show]
   
   def index
@@ -39,6 +39,16 @@ class PinsController < ApplicationController
 
   def upvote
     @pin.upvote_by current_user
+    respond_to do |format|
+      format.html do 
+        redirect_to :back
+      end
+      format.js { }
+    end
+  end
+
+  def downvote
+    @pin.downvote_by current_user
     redirect_to :back
   end
 

@@ -14,15 +14,15 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @pin = @comment.pin
+    @id = @comment.id
     @comment.destroy
-    redirect_to @pin
     
-    # respond_to do |format|
-    #   format.html do 
-        # 
-      # end
-      # format.js {render :template => 'destroy.js.erb', :layout => false}
-    # end
+    respond_to do |format|
+      format.html do 
+        redirect_to @pin
+      end
+      format.js { }
+    end
     # render :nothing =>true, :status => 204  
   end
 

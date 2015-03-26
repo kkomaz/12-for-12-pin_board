@@ -5,5 +5,4 @@
   %p= comment.content 
   .col-md-12
     .btn-group.pull-right
-      = link_to 'Delete', [@pin, comment], method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-danger"
-      / remote: true,
+      = link_to 'Delete', [@pin, comment], remote: true, method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-danger"
