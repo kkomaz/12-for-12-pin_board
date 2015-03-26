@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pry'
+gem 'figaro'
 
 #manual installed
 gem 'haml', '~> 4.0.6'

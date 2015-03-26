@@ -17,6 +17,5 @@
 /tmp
 
 #Ignore development files
-config/environments/*
-.env
-Procfile
+# Ignore application configuration
+/config/application.yml
