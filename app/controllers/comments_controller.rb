@@ -5,9 +5,11 @@ class CommentsController < ApplicationController
     @pin = Pin.find(params[:pin_id])
     @comment = @pin.comments.build(comment_params)
     @comment.save
-
     respond_to do |format|
-      format.js {}
+      format.html do 
+        redirect_to @pin
+      end
+      format.js { }
     end
   end
 
@@ -23,7 +25,6 @@ class CommentsController < ApplicationController
       end
       format.js { }
     end
-    # render :nothing =>true, :status => 204  
   end
 
   private
