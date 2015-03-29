@@ -8,7 +8,7 @@ class ContactFormsController < ApplicationController
     @contact_form.request = request
     if @contact_form.deliver
       flash[:notice] = "Message sent!"
-      redirect_to pins_path
+      redirect_to new_contact_form_path
     else
       flash[:error] = "Message Error!"
       render :new
