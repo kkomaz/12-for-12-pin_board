@@ -21,7 +21,7 @@
               = link_to like_pin_path(@pin), remote: true, method: :put, class:"btn btn-default vpos" do
                 .glyphicon.glyphicon-thumbs-up
                   %div#upvote= @pin.get_upvotes.size
-              = link_to dislike_pin_path(@pin), method: :put, class:"btn btn-default npos" do
+              = link_to dislike_pin_path(@pin), remote: true, method: :put, class:"btn btn-default npos" do
                 .glyphicon.glyphicon-thumbs-down
                   %div#downvote= @pin.get_downvotes.size
           .col-md-6

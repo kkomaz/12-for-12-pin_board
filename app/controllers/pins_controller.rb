@@ -49,7 +49,12 @@ class PinsController < ApplicationController
 
   def downvote
     @pin.downvote_by current_user
-    redirect_to :back
+    respond_to do |format|
+      format.html do 
+        redirect_to :back
+      end
+      format.js { }
+    end
   end
 
   private
