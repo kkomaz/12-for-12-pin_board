@@ -11,5 +11,6 @@
         Submitted by
         = pin.user.email
 
-
+.col-md-3.col-md-offset-5
+  = will_paginate @pins, :previous_label => h("<"), :next_label => h(">")
 
