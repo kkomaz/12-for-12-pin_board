@@ -9,7 +9,8 @@ describe 'user login', :type => :feature do
     fill_in('Password', :with => @crookshanks.password)
     click_button('Log in')
     expect(current_path).to eq ('/')
-    expect(page).to have_content('Sign Out')
+    save_and_open_page
+    expect(page).to have_content('Signed in successfully.')
   end
 
   it 'fails to log in' do
