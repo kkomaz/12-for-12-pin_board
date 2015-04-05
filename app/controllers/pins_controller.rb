@@ -4,7 +4,6 @@ class PinsController < ApplicationController
   
   def index
     @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
-    binding.pry
   end
 
   def new
@@ -16,7 +15,7 @@ class PinsController < ApplicationController
 
   def create
     @pin = current_user.pins.build(pin_params)
-    binding.pry
+    # binding.pry
     @pin.character = Character.find(params[:pin][:character])
     if @pin.save
       redirect_to @pin, notice: "Sucessfully created new Pin"
